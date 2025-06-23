@@ -1,0 +1,19 @@
+Failure # 1 (occurred at 2025-06-21_08-57-42)
+[36mray::_Inner.train()[39m (pid=8630, ip=127.0.0.1, actor_id=d210f2267f3713d59c56e5c101000000, repr=TorchTrainer)
+  File "/Users/kavina/Documents/EXTRA/madewithml/Made-With-ML/venv/lib/python3.10/site-packages/ray/tune/trainable/trainable.py", line 400, in train
+    raise skipped from exception_cause(skipped)
+  File "/Users/kavina/Documents/EXTRA/madewithml/Made-With-ML/venv/lib/python3.10/site-packages/ray/train/_internal/utils.py", line 54, in check_for_failure
+    ray.get(object_ref)
+ray.exceptions.RayTaskError(PicklingError): [36mray::_RayTrainWorker__execute.get_next()[39m (pid=8640, ip=127.0.0.1, actor_id=2f571829180a9d079d7505d201000000, repr=<ray.train._internal.worker_group.RayTrainWorker object at 0x10baa06d0>)
+  File "/Users/kavina/Documents/EXTRA/madewithml/Made-With-ML/venv/lib/python3.10/site-packages/ray/train/_internal/worker_group.py", line 33, in __execute
+    raise skipped from exception_cause(skipped)
+  File "/Users/kavina/Documents/EXTRA/madewithml/Made-With-ML/venv/lib/python3.10/site-packages/ray/train/_internal/utils.py", line 129, in discard_return_wrapper
+    train_func(*args, **kwargs)
+  File "/var/folders/p4/j0h3rdp1787gz1r_bh5qzbbh0000gn/T/ipykernel_8527/3998830290.py", line 39, in train_loop_per_worker
+  File "/Users/kavina/Documents/EXTRA/madewithml/Made-With-ML/venv/lib/python3.10/site-packages/ray/train/torch/torch_checkpoint.py", line 151, in from_model
+    torch.save(model, model_path)
+  File "/Users/kavina/Documents/EXTRA/madewithml/Made-With-ML/venv/lib/python3.10/site-packages/torch/serialization.py", line 441, in save
+    _save(obj, opened_zipfile, pickle_module, pickle_protocol)
+  File "/Users/kavina/Documents/EXTRA/madewithml/Made-With-ML/venv/lib/python3.10/site-packages/torch/serialization.py", line 653, in _save
+    pickler.dump(obj)
+_pickle.PicklingError: Can't pickle <class '__main__.FinetunedLLM'>: attribute lookup FinetunedLLM on __main__ failed

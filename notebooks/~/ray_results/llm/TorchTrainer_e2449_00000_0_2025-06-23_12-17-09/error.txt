@@ -1,0 +1,11 @@
+Failure # 1 (occurred at 2025-06-23_12-17-11)
+The actor died because of an error raised in its creation task, [36mray::_Inner.__init__()[39m (pid=43413, ip=127.0.0.1, actor_id=1ee2a2a76477358bfc81187f01000000, repr=TorchTrainer)
+  File "/Users/kavina/.pyenv/versions/3.10.11/lib/python3.10/site-packages/ray/tune/trainable/trainable.py", line 185, in __init__
+    self.setup(copy.deepcopy(self.config))
+  File "/Users/kavina/.pyenv/versions/3.10.11/lib/python3.10/site-packages/ray/tune/trainable/util.py", line 304, in setup
+    setup_kwargs[k] = parameter_registry.get(prefix + k)
+  File "/Users/kavina/.pyenv/versions/3.10.11/lib/python3.10/site-packages/ray/tune/registry.py", line 301, in get
+    return ray.get(self.references[k])
+ray.exceptions.RaySystemError: System error: No module named 'madewithml'
+traceback: Traceback (most recent call last):
+ModuleNotFoundError: No module named 'madewithml'
